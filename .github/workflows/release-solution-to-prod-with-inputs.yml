@@ -11,7 +11,7 @@ on:
       solution_name:
         description: 'The solution name.'
         type: string
-        default: COEALM       
+        default: ALMLab       
       solution_shipping_folder:
         description: 'folder name for staging the exported solution *do not change*'        
         type: string
@@ -36,22 +36,14 @@ on:
         description: 'Production environment url.'
         type: string
         required: true
-      BUILD_ENV_CLIENT_ID: 
-        description: 'The client id for build environment'
+      CLIENT_ID: 
+        description: 'The client id'
         type: string
         required: true
-      BUILD_ENV_TENANT_ID: 
-        description: 'The tenant id for build environment'
+      TENANT_ID: 
+        description: 'The tenant id'
         type: string
         required: true
-      PROD_ENV_CLIENT_ID: 
-        description: 'The client id for production environment'
-        type: string
-        required: true
-      PROD_ENV_TENANT_ID: 
-        description: 'The tenant id for production environment'
-        type: string
-        required: true  
 
 jobs:
   convert-to-managed:
@@ -76,9 +68,9 @@ jobs:
       uses: microsoft/powerplatform-actions/import-solution@0.4.0
       with:
         environment-url: ${{inputs.BUILD_ENVIRONMENT_URL}}
-        app-id: ${{inputs.BUILD_ENV_CLIENT_ID}}
-        client-secret: ${{ secrets.BUILD_ENV_POWERPLATFORMSPN }}
-        tenant-id: ${{inputs.BUILD_ENV_TENANT_ID}}
+        app-id: ${{inputs.CLIENT_ID}}
+        client-secret: ${{ secrets.POWERPLATFORMSPN }}
+        tenant-id: ${{inputs.TENANT_ID}}
         solution-file: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}.zip
         force-overwrite: true
         publish-changes: true
@@ -87,9 +79,9 @@ jobs:
       uses: microsoft/powerplatform-actions/export-solution@0.4.0
       with:
         environment-url: ${{inputs.BUILD_ENVIRONMENT_URL}}
-        app-id: ${{inputs.BUILD_ENV_CLIENT_ID}}
-        client-secret: ${{ secrets.envSecret }} 
-        tenant-id: ${{inputs.BUILD_ENV_TENANT_ID}}
+        app-id: ${{inputs.CLIENT_ID}}
+        client-secret: ${{ secrets.POWERPLATFORMSPN }} 
+        tenant-id: ${{inputs.TENANT_ID}}
         solution-name: ${{ inputs.solution_name }}
         managed: true
         solution-output-file: ${{ inputs.solution_shipping_folder}}/${{ inputs.solution_name }}.zip
@@ -120,9 +112,9 @@ jobs:
       uses: microsoft/powerplatform-actions/import-solution@0.4.0
       with:
         environment-url: ${{inputs.PRODUCTION_ENVIRONMENT_URL}}
-        app-id: ${{inputs.PROD_ENV_CLIENT_ID}}
-        client-secret: ${{ secrets.PROD_ENV_POWERPLATFORMSPN }}
-        tenant-id: ${{inputs.PROD_ENV_TENANT_ID}}
+        app-id: ${{inputs.CLIENT_ID}}
+        client-secret: ${{ secrets.POWERPLATFORMSPN }}
+        tenant-id: ${{inputs.TENANT_ID}}
         solution-file: ${{ inputs.solution_release_folder}}/${{ inputs.solution_name }}.zip
         force-overwrite: true
         publish-changes: true
