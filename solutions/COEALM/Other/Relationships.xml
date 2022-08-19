@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <EntityRelationship Name="business_unit_hofsecoe_scheduler" />
+  <EntityRelationship Name="lk_hofsecoe_scheduler_createdby" />
+  <EntityRelationship Name="lk_hofsecoe_scheduler_modifiedby" />
+  <EntityRelationship Name="owner_hofsecoe_scheduler" />
+  <EntityRelationship Name="team_hofsecoe_scheduler" />
+  <EntityRelationship Name="user_hofsecoe_scheduler" />
+</EntityRelationships>
