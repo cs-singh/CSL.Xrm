@@ -80,6 +80,7 @@
     <RootComponents>
       <RootComponent type="1" schemaName="hofsecoe_scheduler" behavior="0" />
       <RootComponent type="9" schemaName="hofsecoe_frequency" behavior="0" />
+      <RootComponent type="29" id="{9be4eecc-f027-ed11-9db1-000d3a2d2d29}" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>
