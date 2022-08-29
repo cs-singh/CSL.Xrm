@@ -1,4 +1,4 @@
-name: export-both-and-branch-solution
+name: B.1.Export-both-and-branch-solution
 # Export both unmanaged and managed solution from DEV environment
 #  unpack it and prepare, commit and push a git branch with the changes
 
