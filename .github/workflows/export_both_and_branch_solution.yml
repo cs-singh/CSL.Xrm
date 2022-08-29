@@ -49,7 +49,15 @@ jobs:
         client-secret: ${{ secrets.PowerPlatformSPN }}
         tenant-id: ${{env.TENANT_ID}}
 
-
+    - name: publish solutions
+      uses: microsoft/powerplatform-actions/publish-solution@0.4.0
+      with:
+        environment-url: ${{env.ENVIRONMENT_URL}}
+        app-id: ${{env.CLIENT_ID}}
+        client-secret: ${{ secrets.PowerPlatformSPN }}
+        tenant-id: ${{env.TENANT_ID}}
+        
+        
     - name: export-solution unmanged 
       uses: microsoft/powerplatform-actions/export-solution@0.4.0
       with:
