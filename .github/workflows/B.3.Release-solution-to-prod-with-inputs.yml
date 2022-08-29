@@ -46,9 +46,8 @@ on:
         required: true
 
 jobs:
-  convert-to-managed:
+  pack-solution-as-managed:
     runs-on: windows-latest
-    # or you can say runs-on: ubuntu-latest
     env:
       RUNNER_DEBUG: 1
 
@@ -61,30 +60,8 @@ jobs:
       uses: microsoft/powerplatform-actions/pack-solution@0.4.0
       with:
         solution-folder: ${{ inputs.solution_source_folder}}/${{ inputs.solution_name }}
-        solution-file: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}.zip
-        solution-type: Unmanaged
-
-    - name: Import solution as unmanaged to build env
-      uses: microsoft/powerplatform-actions/import-solution@0.4.0
-      with:
-        environment-url: ${{inputs.BUILD_ENVIRONMENT_URL}}
-        app-id: ${{inputs.CLIENT_ID}}
-        client-secret: ${{ secrets.envSecret }}
-        tenant-id: ${{inputs.TENANT_ID}}
-        solution-file: ${{ inputs.solution_outbound_folder}}/${{ inputs.solution_name }}.zip
-        force-overwrite: true
-        publish-changes: true
-
-    - name: Export solution as managed
-      uses: microsoft/powerplatform-actions/export-solution@0.4.0
-      with:
-        environment-url: ${{inputs.BUILD_ENVIRONMENT_URL}}
-        app-id: ${{inputs.CLIENT_ID}}
-        client-secret: ${{ secrets.envSecret }} 
-        tenant-id: ${{inputs.TENANT_ID}}
-        solution-name: ${{ inputs.solution_name }}
-        managed: true
-        solution-output-file: ${{ inputs.solution_shipping_folder}}/${{ inputs.solution_name }}.zip
+        solution-file: ${{ inputs.solution_shipping_folder}}/${{ inputs.solution_name }}.zip
+        solution-type: Managed
 
     - name: Upload the ready to ship solution to GH artifact store
       uses: actions/upload-artifact@v2
@@ -92,8 +69,8 @@ jobs:
         name: managedSolutions
         path: ${{ inputs.solution_shipping_folder}}/${{ inputs.solution_name }}.zip
 
-  release-to-staging:
-    needs: [ convert-to-managed ]
+  release-to-production:
+    needs: [ pack-solution-as-managed]
     runs-on: windows-latest
     env:
       RUNNER_DEBUG: 1
@@ -108,6 +85,7 @@ jobs:
       with:
         name: managedSolutions
         path: ${{ inputs.solution_release_folder}}
+        
     - name: Import solution to prod env
       uses: microsoft/powerplatform-actions/import-solution@0.4.0
       with:
