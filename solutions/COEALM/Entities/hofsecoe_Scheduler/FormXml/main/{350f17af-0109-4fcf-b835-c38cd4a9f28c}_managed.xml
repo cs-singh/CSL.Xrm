@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{350f17af-0109-4fcf-b835-c38cd4a9f28c}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{afa13c58-e276-464b-9565-415aa01c5680}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{31acad23-b35b-49c2-a9ba-6dee3456eecb}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{facac338-dc43-4b54-bb3f-4201ffa41f11}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="hofsecoe_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="hofsecoe_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1d349eae-77df-4a04-8660-78aa3b714c26}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Start Date" languagecode="1033" />
+                        </labels>
+                        <control id="hofsecoe_startdate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="hofsecoe_startdate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4fbdbe45-c145-4110-bcf7-2db1656e4d5f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="End Date" languagecode="1033" />
+                        </labels>
+                        <control id="hofsecoe_enddate" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="hofsecoe_enddate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{33148e9b-5d59-42e3-a958-14fb57366fc9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Frequency" languagecode="1033" />
+                        </labels>
+                        <control id="hofsecoe_frequency" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="hofsecoe_frequency" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2eeb093e-0d7d-45c3-9205-c814b25e0995}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{4cba2680-313c-4541-9192-be1a36109750}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{703475d1-5c6f-4082-9dce-544db805962f}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{96dcebb9-458f-4cca-9e60-6a2f59435da6}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{7c0109c1-0497-4e79-a1aa-d4d609cfa0d9}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{20b0a5a9-7cbf-457a-8028-ef6f7e9b3ca3}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{468c36da-5bd6-465e-a948-d1e7b6b0bf49}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{0d455983-b5bd-45a4-bbab-17de0549e58a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{785fbe52-821b-49bc-9a7f-9092295a126e}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>
