@@ -60,7 +60,14 @@ jobs:
         app-id: ${{ secrets.AAD_CLIENT_ID }}
         client-secret: ${{ secrets.AAD_APP_SECRET }}
         tenant-id: ${{ secrets.AAD_TENANT_ID }}
-
+        
+    - name: publish solutions
+      uses: microsoft/powerplatform-actions/publish-solution@0.4.0
+      with:
+        environment-url: ${{secrets.DEV_ENVIRONMENT_URL}}
+        app-id: ${{secrets.AAD_CLIENT_ID}}
+        client-secret: ${{ secrets.AAD_APP_SECRET }}
+        tenant-id: ${{secrets.AAD_TENANT_ID}}
 
     - name: export-solution action
       uses: microsoft/powerplatform-actions/export-solution@0.4.0
@@ -71,6 +78,7 @@ jobs:
         tenant-id: ${{ secrets.AAD_TENANT_ID }}
         solution-name: ${{ inputs.SOLUTION_NAME }}
         solution-output-file: ${{ inputs.SOLUTION_EXPORTS_FOLDER }}${{ inputs.SOLUTION_NAME }}.zip
+        
 
     - name: unpack-solution action
       uses: microsoft/powerplatform-actions/unpack-solution@0.4.0
