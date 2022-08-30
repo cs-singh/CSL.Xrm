@@ -1,4 +1,4 @@
-name: Release  Solution
+name: Release Solution
 # Release your solution to prod when you create a new release.
 
 on:
